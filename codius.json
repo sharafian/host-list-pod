@@ -6,30 +6,10 @@
     "port": "8080",
     "containers": [{
       "id": "app",
-      "image": "sharafian/host-list:latest",
-      "workdir": "/root",
-      "command": [ "nginx", "-g", "daemon off;" ],
+      "image": "sharafian/host-list@sha256:bfdd58c4dc2de69688faa18cc454d5861c042ab596d1a9205c981ea82efe6921",
       "environment": {
-        "AWS_ACCESS_KEY": "$AWS_ACCESS_KEY",
-        "AWS_SECRET_KEY": "$AWS_SECRET_KEY"
+        "BOOTSTRAP_PEERS": "[\"codius.justmoon.com\"]"
       }
-    }],
-    "vars": {
-      "AWS_ACCESS_KEY": {
-        "value": "AKRTP2SB9AF5TQQ1N1BB"
-      },
-      "AWS_SECRET_KEY": {
-        "encoding": "private:sha256",
-        "value": "aa965f3036ee2e6496cd961d9ed75626bc600ff1636b8cd909974dae2eb19208"
-      }
-    }
-  },
-  "private": {
-    "vars": {
-      "AWS_SECRET_KEY": {
-        "nonce": "1234530325",
-        "value": "AKRTP2SB9AF5TQQ1N1BC"
-      }
-    }
+    }]
   }
 }
